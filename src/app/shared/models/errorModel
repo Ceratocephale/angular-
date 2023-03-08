@@ -1,0 +1,4 @@
+export interface errorModel{
+    statusCode : number,
+    message : string
+}

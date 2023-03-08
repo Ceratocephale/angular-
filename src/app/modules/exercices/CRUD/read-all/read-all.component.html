@@ -1,0 +1,17 @@
+<br>
+
+
+<h4>Products</h4>
+
+<br>
+<ul>
+    <li *ngFor="let article of articles">
+        <p>{{article.name}} - {{article.price}}  <a [routerLink]="['./',article.id]">See more</a></p>
+        <button (click)="remove(articles.indexOf(article))">Delete</button>
+        &nbsp;
+        <button (click)="update(articles.indexOf(article), article)" [routerLink]="['../update']">Update</button>
+    </li>
+</ul>
+
+<router-outlet></router-outlet>
+

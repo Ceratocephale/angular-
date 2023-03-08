@@ -1,0 +1,23 @@
+<br>
+
+<div *ngIf="selectedArticle == undefined">
+    <h3 style="color: red">Product not found!</h3>
+</div>
+
+<div *ngIf="selectedArticle != undefined">
+
+    <h4>{{selectedArticle.name}}</h4>
+        <ul>
+            <li>Category : {{selectedArticle.category}}</li>
+            <li>Price : {{selectedArticle.price}}</li>
+            <li>Creation Date : {{selectedArticle.creationDate | date : 'dd/MM/yyyy'}}</li>
+            <li>Description : {{selectedArticle.description}}</li>
+            <li>Note : {{selectedArticle.note}}</li>
+            <br>
+
+        </ul>
+
+</div>
+
+<button [routerLink]="['../']">Get back to the list</button>
+    

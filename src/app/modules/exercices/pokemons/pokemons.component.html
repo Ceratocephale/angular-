@@ -1,0 +1,29 @@
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+Pokemon id:
+<input type="number" [(ngModel)]="pokeId"> &nbsp;
+<button (click)="find()" [disabled]="pokeId == undefined">Search 🔍</button>
+
+<div *ngIf="errorMessage != '' " style="color: red">
+    Pokemon introuvable!
+</div>
+<div *ngIf="hasPokemon">
+
+    <h2>{{monPokemon.name}}</h2>
+
+    id: {{monPokemon.id}}
+    <br>
+    Poids: {{monPokemon.weight}} kg
+    <br>
+    Taille: {{monPokemon.height}} cm
+    <br>
+
+<app-stats [stats]="monPokemon.stats"></app-stats>
+
+<app-types [types]="monPokemon.types"></app-types>
+</div>
